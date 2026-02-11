@@ -1,0 +1,142 @@
+:root {
+    --hd-yellow: #ffeb3b;
+    --traitor-red: #ff1a1a;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    overflow: hidden;
+    transition: background 0.5s ease;
+}
+
+#app-container {
+    width: 90%;
+    max-width: 500px;
+    background: rgba(20,22,24,0.85);
+    border: 2px solid #3c3f41;
+    border-top: 5px solid var(--hd-yellow);
+    padding: 2.5rem;
+    z-index: 10; 
+    text-align: center;
+    position: relative;
+    border-radius: 8px;
+}
+
+.header {
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--hd-yellow);
+    font-size: 0.75rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #444;
+    padding-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.page { display: none; }
+.page.active { display: block; }
+
+h1 { font-size: 2rem; margin-bottom: 1rem; }
+
+.question-text {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button {
+    background: transparent;
+    color: var(--hd-yellow);
+    border: 2px solid var(--hd-yellow);
+    padding: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--hd-yellow);
+    color: black;
+}
+
+.no-btn {
+    border-color: #555;
+    color: #aaa;
+}
+
+.no-btn:hover {
+    background: var(--traitor-red);
+    border-color: var(--traitor-red);
+    color: white;
+}
+
+#celebration-layer {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: none;
+    z-index: 100;
+}
+
+.floating-emoji {
+    position: absolute;
+    bottom: -100px;
+    animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 0; }
+    10% { opacity: 1; }
+    100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+
+/* HELLDIVER IMAGES */
+#helldiver-image {
+    position: fixed;
+    top: 50%;
+    right: 75px;
+    width: 250px;
+    height: 250px;
+    background: url("https://via.placeholder.com/250x250/ffff00/000000?text=Helldiver") no-repeat center center;
+    background-size: contain;
+    z-index: 100;
+    pointer-events: none;
+    display: none;
+    transform: translateY(-50%);
+}
+
+#helldiver-image2 {
+    position: fixed;
+    top: 50%;
+    left: 75px;
+    width: 250px;
+    height: 250px;
+    background: url("https://via.placeholder.com/250x250/ffff00/000000?text=Helldiver") no-repeat center center;
+    background-size: contain;
+    z-index: 100;
+    pointer-events: none;
+    display: none;
+    transform: translateY(-50%) scaleX(-1);
+}
+
+/* BACKGROUNDS */
+body.page1-mode { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("src/bg1.jpg") center/cover no-repeat; }
+body.page2-mode { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("src/bg2.jpg") center/cover no-repeat; }
+body.page3-mode { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("src/bg3.jpg") center/cover no-repeat; }
+body.page4-mode { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("src/bg4.jpg") center/cover no-repeat; }
+body.page5-mode { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("src/bg5.jpg") center/cover no-repeat; }
+body.success-mode { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("src/helldiver.jpg") center/cover no-repeat; }
+body.traitor-mode { background: linear-gradient(rgba(50,0,0,0.85), rgba(0,0,0,0.95)), url("src/automaton.jpg") center/cover no-repeat; }

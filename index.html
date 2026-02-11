@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SUPER EARTH VALENTINE PROTOCOL</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body class="page1-mode">
+
+<!-- BACKGROUND MUSIC -->
+<audio id="bg-music" loop>
+    <source src="src/bgmusic.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<div id="celebration-layer"></div>
+<div id="helldiver-image"></div>
+<div id="helldiver-image2"></div>
+
+<div id="app-container">
+
+<div class="header" id="header-text">
+<span>STRATAGEM STATUS: ACTIVE</span>
+<span>SES LIBERTY REPRESENTATIVE</span>
+</div>
+
+<!-- PAGE 1 -->
+<div id="page1" class="page active">
+<h1>READY TO DIVE?</h1>
+<p class="question-text">Are you prepared to defend Super Earth?</p>
+<button onclick="startMusic(); nextPage(2)">AFFIRMATIVE</button>
+</div>
+
+<!-- PAGE 2 -->
+<div id="page2" class="page">
+<h1>LOYALTY CHECK</h1>
+<p class="question-text">Will you fight bugs and bots without hesitation?</p>
+<div class="btn-group">
+<button onclick="nextPage(3)">FOR DEMOCRACY</button>
+<button onclick="nextPage(1)">BACK</button>
+</div>
+</div>
+
+<!-- PAGE 3 -->
+<div id="page3" class="page">
+<h1>STRATAGEM CONFIRMATION</h1>
+<p class="question-text">Will you reinforce your fellow Helldiver at all times?</p>
+<div class="btn-group">
+<button onclick="nextPage(4)">ALWAYS</button>
+<button onclick="nextPage(2)">BACK</button>
+</div>
+</div>
+
+<!-- PAGE 4 -->
+<div id="page4" class="page">
+<h1>EMOTIONAL AUTHORIZATION</h1>
+<p class="question-text">Will you share rations and hugs in the name of democracy?</p>
+<div class="btn-group">
+<button onclick="nextPage(5)">WITH HONOR</button>
+<button onclick="nextPage(3)">BACK</button>
+</div>
+</div>
+
+<!-- PAGE 5 -->
+<div id="page5" class="page">
+<h1 style="color: var(--hd-yellow);">VALENTINE REQUEST</h1>
+<p class="question-text">Will you be my Valentine for Democracy?</p>
+<div class="btn-group">
+<button onclick="celebrate()">YES</button>
+<button class="no-btn" onclick="traitor()">NO</button>
+<button onclick="nextPage(4)">BACK</button>
+</div>
+</div>
+
+<!-- SUCCESS -->
+<div id="success" class="page">
+<h1 style="color: var(--hd-yellow);">MISSION SUCCESS</h1>
+<p class="question-text">THE MINISTRY OF LOVE APPROVES.</p>
+<button onclick="resetAll()">RESTART PROTOCOL</button>
+</div>
+
+<!-- TRAITOR -->
+<div id="traitor" class="page">
+<h1 style="color: var(--traitor-red);">TRAITOR DETECTED</h1>
+<p class="question-text">REPORT FOR RE-EDUCATION.</p>
+<button onclick="resetAll()">RETURN</button>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
